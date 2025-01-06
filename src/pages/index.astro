@@ -1,23 +1,20 @@
 ---
-import { text } from "../language/text";
 import Layout from "../layouts/Layout.astro";
 import { Heading } from "@navikt/ds-react";
-import type { Language } from "../language/language";
 import AstroIslandExample from "@src/components/astro-island/AstroIsland.astro";
-
-const language = Astro.currentLocale as Language;
-  console.error("Neverlucky i index");
-
 ---
 
 <Layout>
     <div>
         <div>
             <Heading size={"large"}>
-                {text.title[language]}
+                tms-astro-template-azure
             </Heading>
         </div>
     </div>
     <AstroIslandExample server:defer>
+        <div slot="fallback">
+            Navn: Laster inn data...
+        </div>
     </AstroIslandExample>
 </Layout>
