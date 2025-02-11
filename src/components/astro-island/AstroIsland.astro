@@ -1,13 +1,12 @@
 ---
-import { BodyLong } from "@navikt/ds-react";
-import { exampleApiUrl } from "@src/utils/server/urls";
+import { BodyLong } from '@navikt/ds-react';
+import { exampleApiUrl } from '@src/utils/server/urls';
 
 const exampleData: any = await fetch(exampleApiUrl)
   .then((response) => response.json())
   .then((data) => data);
-
 ---
 
 <BodyLong>
-    Navn: {exampleData.name}
+  Navn: {exampleData.name}
 </BodyLong>

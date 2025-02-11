@@ -1,20 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Heading } from "@navikt/ds-react";
-import AstroIslandExample from "@src/components/astro-island/AstroIsland.astro";
+import Layout from '../layouts/Layout.astro';
+import { Heading } from '@navikt/ds-react';
+import AstroIslandExample from '@src/components/astro-island/AstroIsland.astro';
 ---
 
 <Layout>
+  <div>
     <div>
-        <div>
-            <Heading size={"large"}>
-                tms-astro-template-azure
-            </Heading>
-        </div>
+      <Heading size={'large'}> tms-astro-template-azure </Heading>
     </div>
-    <AstroIslandExample server:defer>
-        <div slot="fallback">
-            Navn: Laster inn data...
-        </div>
-    </AstroIslandExample>
+  </div>
+  <AstroIslandExample server:defer>
+    <div slot="fallback">Navn: Laster inn data...</div>
+  </AstroIslandExample>
 </Layout>
