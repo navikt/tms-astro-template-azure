@@ -1,6 +1,6 @@
-# tms-astro-template IdPorten
+# tms-astro-template Azure
 
-Dette er en AstroJS frontend template med IdPorten autentisering for eksterne brukere.
+Dette er en AstroJS frontend template med Azure autentisering for interne brukere.
 
 # Kom i gang
 

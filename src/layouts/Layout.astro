@@ -1,24 +1,30 @@
 ---
 import styles from "./Layout.module.css";
-import Header from "@src/components/header/header.astro";
-
+import Header from "@src/components/header/Header.astro";
 ---
 
 <!doctype html>
 <html lang="nb">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>tms-astro-template</title>
-    <link rel="preload" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css" as="style" />
-    <link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>tms-astro-template</title>
+    <link
+      rel="preload"
+      href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"
+    />
   </head>
   <body class="main">
-      <Header />
-      <main class={styles.container}>
-        <slot />
-      </main>
+    <Header />
+    <main class={styles.container}>
+      <slot />
+    </main>
   </body>
 </html>

@@ -1,39 +1,39 @@
-apiVersion: "nais.io/v1alpha1"
-kind: "Application"
+apiVersion: 'nais.io/v1alpha1'
+kind: 'Application'
 metadata:
   name: tms-astro-template
   namespace: min-side
   labels:
     team: min-side
 spec:
-  idporten:
-    enabled: true
-    sidecar:
-      enabled: true
-      level: Level3
-  tokenx:
-    enabled: true
-  image: {{ image }}
+  image: {{image}}
   port: 3000
   liveness:
-    path: /tms-astro-template/api/internal/isAlive
+    path: /api/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /tms-astro-template/api/internal/isReady
+    path: /api/internal/isReady
     initialDelay: 10
   replicas:
     min: 2
     max: 4
+  ingresses:
+    - 'https://tms-astro-template.ansatt.nav.no'
   accessPolicy:
     outbound:
       rules:
-        - application: nav-dekoratoren
-          namespace: personbruker
-  ingresses:
-    - "https://www.nav.no/tms-astro-template"
+        - application: tms-astro-template
+  azure:
+    application:
+      enabled: true
+      allowAllUsers: true
+      tenant: nav.no
+    sidecar:
+      enabled: true
+      autoLogin: true
   resources:
     limits:
       memory: 768Mi
     requests:
-      cpu: "20m"
+      cpu: '20m'
       memory: 128Mi
